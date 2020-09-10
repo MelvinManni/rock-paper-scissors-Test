@@ -102,7 +102,7 @@ class BonusPlay extends Component {
         </div>
         <div className="winner">{winner ? this.selectWinner() : null}</div>
         <button type="button" onClick={this.startGame}>
-          Start!
+        Start Game!
         </button>
       </div>
     );
