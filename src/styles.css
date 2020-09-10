@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+  background-color: rgb(11, 6, 77);
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: space-evenly;
+  color: #fff;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 70vw;
+  margin: 0 auto;
+}
+.container .title {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  margin: 60px 0 20px 0;
+}
+.switch_mode {
+  /* display: none; */
+  position: fixed;
+  right: 10px;
+  top: 15px;
+  background-color: rgb(35, 27, 150);
+  border: 3px solid rgb(35, 27, 150);
+  padding: 7px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 14px;
+  z-index: 1;
+  cursor: pointer;
+}
+.player_bg {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5b2;
+  margin: 0 auto;
+  height: 35vh;
+}
+.player {
+  width: 40%;
+  height: 150px;
+  margin: 50px;
+  border-radius: 50%;
+  text-align: center;
+  display: inline-block;
+}
+.weapons {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: inherit;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.weapons .weaponBtn {
+  display: inline;
+  margin: 5px 10px;
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  border-radius: 25px;
+  background: rgb(44, 68, 206);
+}
+.weaponBtn:hover {
+  background: rgb(73, 96, 226);
+}
+
+.player:nth-child(2) {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.winner {
+  margin: 25px auto;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  text-align: center;
+  font-weight: 600;
+}
+.player-image {
+  height: 150px;
+  width: 160px;
+}
+button {
+  width: 200px;
+  height: 50px;
+  display: block;
+  margin: 10px auto;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 25px;
+  background: rgb(73, 96, 226);
+  border: none;
+  outline: none;
+}
+
+button:hover {
+  cursor: pointer;
+  background: rgb(44, 68, 206);
+}
+@media screen and (max-width: 579px) {
+  .container .title {
+    font-size: 18px;
+    width: 80vw;
+    word-wrap: break-word;
+  }
+  .player_bg {
+    flex-direction: column;
+    height: 50vh;
+  }
+  .player {
+    width: 60%;
+    height: 30px;
+    border-radius: 50%;
+    position: relative;
+    top: -35px;
+  }
+  .player-image {
+    height: 100px;
+    width: 120px;
+  }
+  .weapons .weaponBtn {
+    margin: 5px 8px;
+    width: 95px;
+  }
+}
+@media screen and (min-width: 580px) and (max-width: 860px) {
+  .container .title {
+    font-size: 18px;
+    width: 60vw;
+    word-wrap: break-word;
+    margin: 20px auto;
+  }
+  .player_bg {
+    flex-direction: row;
+    height: 35vh;
+  }
+  .player {
+    width: 60%;
+    height: 50px;
+    border-radius: 50%;
+    position: relative;
+    top: -35px;
+  }
+  .player-image {
+    height: 100px;
+    width: 120px;
+  }
+  .weapons .weaponBtn {
+    margin: 5px 8px;
+    width: 110px;
+  }
+}
