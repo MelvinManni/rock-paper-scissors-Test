@@ -6,14 +6,8 @@ class BonusPlay extends Component {
   state = {
     playerOne: weapons[0],
     playerTwo: weapons[0],
-    winner: "",
-    mode: ''
+    winner: ""
   };
-
-  componentDidUpdate() {
-    localStorage.setItem('playmode', this.state.mode)
-    this.props.updateCom()
-  }
 
   startGame = () => {
     let counter = 0;
@@ -54,6 +48,7 @@ class BonusPlay extends Component {
       return "Player Two Wins!";
     }
   };
+
   selectWeapon = (weapon) => {
     this.setState({
       playerOne: weapon,
@@ -61,14 +56,13 @@ class BonusPlay extends Component {
     });
   };
 
-  
   render() {
     const { playerOne, playerTwo, winner } = this.state;
     
     return (
       <div className="container">
         <span className="title">Rock, Paper, Scissors, Lizard, Spock Bonus Game Play</span>
-        <div className="switch_mode" onClick={() => this.setState({mode: 'original'})}>Original Play</div>
+        <div className="switch_mode" onClick={() => this.props.updateCom('original')}>Original Play</div>
 
         <div className="player_bg">
           <Player weapon={playerOne} />

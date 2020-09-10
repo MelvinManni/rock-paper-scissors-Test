@@ -6,14 +6,17 @@ class App extends Component {
   state = {
     playerOne: weapons[0],
     playerTwo: weapons[0],
-    winner: "",
-    mode: ''
+    winner: ""
   };
+//  componentDidUpdate() {
+//    this.props.updateCom(this.state.mode)
+//  }
 
-  componentDidUpdate() {
-    localStorage.setItem('playmode', this.state.mode)
-    this.props.updateCom()
-  }
+//  savemode = (mode) => {
+//    this.setState({
+//      mode
+//    })
+//  }
 
   startGame = () => {
     let counter = 0;
@@ -60,7 +63,7 @@ class App extends Component {
     return (
       <div className="container">
         <span className="title">Rock Paper Scissors Original Game Play</span>
-        <div className="switch_mode" onClick={() => this.setState({mode: 'bonus'})}>Bonus play</div>
+        <div className="switch_mode" onClick={() => this.props.updateCom('bonus')}>Bonus play</div>
 
         <div className="player_bg">
           <Player weapon={playerOne} />
