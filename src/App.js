@@ -1,42 +1,68 @@
 import React from "react";
 import Player from "./player";
 
-const App = ({startGame, selectWinner, selectWeapon, updateCom, playerOne, playerTwo, winner}) => {
+import paper from "./assets/icon-paper.svg"
+import rock from "./assets/icon-rock.svg"
+import scissors from "./assets/icon-scissors.svg"
+
+const App = ({
+  startGame,
+  selectWinner,
+  selectWeapon,
+  updateCom,
+  playerOne,
+  playerTwo,
+  winner,
+}) => {
   return (
-    <div className="container">
-      <span className="title">Rock Paper Scissors Original Game Play</span>
-      <div className="switch_mode" onClick={() => updateCom('bonus')}>Bonus play</div>
+    <>
+      <div className="hud">
+        <div>
+          <p>ROCK</p>
+          <p>PAPER</p>
+          <p>SCISSOR</p>
+        </div>
+        <div className="score_container">
+          <span className="score">Score</span>
+          <span className="points">0</span>
+        </div>
+      </div>
 
-      <div className="player_bg">
-        <Player weapon={playerOne} />
-        <Player weapon={playerTwo} />
+      <button id="rules">Rules</button>
+
+      <div className="selection">
+        <div className="option paper">
+          <img src={paper} alt="icon" />
+        </div>
+        <div className="option scissors">
+          <img src={scissors} alt="icon" />
+        </div>
+        <div className="option rock">
+          <img src={rock} alt="icon" />
+        </div>
       </div>
-      <div className="weapons">
-        <button
-          className="weaponBtn"
-          onClick={() => selectWeapon("rock")}
-        >
-          rock
-        </button>
-        <button
-          className="weaponBtn"
-          onClick={() => selectWeapon("paper")}
-        >
-          paper
-        </button>
-        <button
-          className="weaponBtn"
-          onClick={() => selectWeapon("scissors")}
-        >
-          scissor
+
+      <div className="activegame hidden">
+        <div>
+          <h2>You Picked</h2>
+          <div id="player"></div>
+        </div>
+        <div>
+          <h2>The House Picked</h2>
+          <div id="house"></div>
+        </div>
+      </div>
+
+      <div className="result">
+        <span className="youwin hidden">You Win</span>
+        <span className="youlose hidden">You Lose</span>
+
+        <button id="playagain" className="hidden">
+          Play Again
         </button>
       </div>
-      <div className="winner">{winner ? selectWinner() : null}</div>
-      <button type="button" onClick={() => startGame()}>
-        Start Game!
-      </button>
-    </div>
+    </>
   );
-}
+};
 
-export default App
+export default App;

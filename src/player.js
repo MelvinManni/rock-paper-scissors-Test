@@ -1,9 +1,10 @@
 import React from "react";
-import scissors from "./assets/scissors.png";
-import paper from "./assets/paper.png";
-import rock from "./assets/rock.jpg";
-import lizard from "./assets/lizard.svg"
-import spock from "./assets/spock.svg"
+import scissors from "./assets/icon-scissors.svg";
+import paper from "./assets/icon-paper.svg";
+import rock from "./assets/icon-rock.svg";
+import lizard from "./assets/icon-lizard.svg"
+import spock from "./assets/icon-spock.svg"
+
 
 const Player = ({ weapon }) => (
   <>

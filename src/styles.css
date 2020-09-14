@@ -1,162 +1,164 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 body {
-  background-color: rgb(11, 6, 77);
-  font-family: 'Montserrat', sans-serif;
-  width: 100%;
-  margin: 1rem auto;
+  position: relative;
   display: flex;
-  justify-content: space-evenly;
-  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  background: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+  padding: 0;
+  margin: 0;
 }
-.container {
+
+.hud {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  margin: 15px auto 40px auto;
+  width: 50%;
+  min-width: 500px;
+}
+
+.hud p {
+  line-height: 20px;
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 8px;
+}
+
+.score_container {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  width: 70vw;
-  margin: 0 auto;
-}
-.container .title {
-  font-size: 28px;
-  font-weight: bold;
-  text-align: center;
-  margin: 50px 0 20px 0;
-}
-.switch_mode {
-  position: fixed;
-  right: 10px;
-  top: 15px;
-  background-color: rgb(35, 27, 150);
-  border: 3px solid rgb(35, 27, 150);
-  padding: 7px 10px;
-  border-radius: 20px;
-  font-weight: 600;
-  font-size: 14px;
-  z-index: 1;
-  cursor: pointer;
-}
-.player_bg {
-  display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: #f5f5f5b2;
-  margin: 0 auto;
-  height: 35vh;
+  background: #fff;
+  width: 100px;
+  margin: 10px;
+  border-radius: 5px;
 }
-.player {
-  width: 40%;
-  height: 150px;
-  margin: 50px;
-  border-radius: 50%;
-  text-align: center;
-  display: inline-block;
+.score_container .score {
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: hsl(215, 40%, 29%);
 }
-.weapons {
-  margin-top: 40px;
+.score_container .points {
+  font-size: 30px;
+  font-weight: bolder;
+  color: hsl(213, 15%, 28%);
+}
+
+button {
+  width: 100px;
+  height: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  background: none;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#rules {
+  position: absolute;
+  bottom: 100px;
+  right: 100px;
+}
+
+.activegame,
+.result {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: inherit;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  width: 600px;
+  color: #fff;
+  text-align: center;
+}
+
+.result {
+  display: flex;
+  height: 100px;
+  flex-direction: column;
   align-items: center;
 }
-.weapons .weaponBtn {
-  display: inline;
-  margin: 5px 10px;
-  color: #fff;
-  font-size: 18px;
-  border: none;
-  border-radius: 25px;
-  background: rgb(44, 68, 206);
-}
-.weaponBtn:hover {
-  background: rgb(73, 96, 226);
+
+.result button {
+  margin: 5px;
 }
 
-.player:nth-child(2) {
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
+.activegame > div:nth-of-type(1) > div {
+  border-color: yellow;
 }
 
-.winner {
-  margin: 25px auto;
-  color: rgb(255, 255, 255);
-  font-size: 16px;
-  text-align: center;
-  font-weight: 600;
+.activegame > div:nth-of-type(2n) > div {
+  border-color: red;
 }
-.player-image {
+
+.activegame > div > div {
+  margin: auto;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.result {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 38px;
+}
+
+.selection {
+  height: 400px;
+  display: flex;  
+  align-items: flex-start;
+}
+
+.option,
+.activegame > div > div {
+  width: 150px;
   height: 150px;
-  width: 160px;
-}
-button {
-  width: 200px;
-  height: 50px;
-  display: block;
-  margin: 10px auto;
-  color: #fff;
-  font-size: 18px;
-  border-radius: 25px;
-  background: rgb(73, 96, 226);
-  border: none;
-  outline: none;
+  border: 20px solid;
+  box-shadow: -5px 5px 30px 3px #000, inset 0 0 5px 2px #000;
+  padding: 20px;
+  border-radius: 50%;
+  background: #fff;
 }
 
-button:hover {
-  cursor: pointer;
-  background: rgb(44, 68, 206);
+.option {
+  margin: -20px;
 }
-@media screen and (max-width: 579px) {
-  .container .title {
-    font-size: 18px;
-    width: 80vw;
-    word-wrap: break-word;
-  }
-  .player_bg {
-    flex-direction: column;
-    height: 50vh;
-  }
-  .player {
-    width: 60%;
-    height: 30px;
-    border-radius: 50%;
-    position: relative;
-    top: -35px;
-  }
-  .player-image {
-    height: 100px;
-    width: 120px;
-  }
-  .weapons .weaponBtn {
-    margin: 5px 8px;
-    width: 95px;
-  }
+
+.selection .option:nth-of-type(2) {
+  align-self: flex-end;
 }
-@media screen and (min-width: 580px) and (max-width: 860px) {
-  .container .title {
-    font-size: 18px;
-    width: 60vw;
-    word-wrap: break-word;
-    margin: 20px auto;
-  }
-  .player_bg {
-    flex-direction: row;
-    height: 35vh;
-  }
-  .player {
-    width: 60%;
-    height: 50px;
-    border-radius: 50%;
-    position: relative;
-    top: -35px;
-  }
-  .player-image {
-    height: 100px;
-    width: 120px;
-  }
-  .weapons .weaponBtn {
-    margin: 5px 8px;
-    width: 110px;
-  }
+
+.option img,
+.activegame > div > div > img {
+  width: 60%;
+  height: 60%;
+  margin: 20%;
+}
+
+.option:hover img {
+  width: 74%;
+  height: 74%;
+  margin: 13%;
+}
+
+.paper {
+  border-color: rgb(197, 0, 0);
+}
+
+.scissors {
+  border-color: rgb(0, 175, 245);
+}
+
+.rock {
+  border-color: rgb(255, 174, 0);
 }
