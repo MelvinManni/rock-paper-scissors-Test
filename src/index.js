@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./styles.css";
-import Selectplay from './Selectplay'
+import App from './App'
+// import Selectplay from './Selectplay'
 
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<Selectplay />, rootElement);
+ReactDOM.render(<App />, rootElement);
